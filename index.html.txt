@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Luis Freites - Desarrollador Fullstack Trainee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        
+        /* FONDO PRINCIPAL: Aquí se coloca tu foto. Usamos un overlay oscuro para que el texto resalte */
+        body { 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                        url('tu-foto.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px; 
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        /* EFECTO MODERNISTA: Tarjetas semi-transparentes con efecto de vidrio esmerilado (Glassmorphism) */
+        .slide-container {
+            width: 100%;
+            max-width: 1100px;
+            background-color: rgba(30, 41, 59, 0.45); /* Transparente */
+            backdrop-filter: blur(12px); /* ESTO GENERA EL DIFUMINADO DE TU FOTO DE FONDO */
+            -webkit-backdrop-filter: blur(12px);
+            color: #f1f5f9;
+            font-family: 'Lato', sans-serif;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08); /* Borde sutil brillante */
+            position: relative;
+        }
+
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; margin: 0; }
+        .slide-title { font-size: 32px; font-weight: 700; color: #38bdf8; margin-bottom: 30px; border-left: 6px solid #38bdf8; padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        p, li { font-size: 18px; line-height: 1.6; color: #cbd5e1; }
+        strong { color: #ffffff; }
+
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; align-items: center; }
+        @media (max-width: 768px) { .two-column { grid-template-columns: 1fr; } }
+
+        .tiled-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        
+        /* Sub-tarjetas internas con contraste */
+        .tile { 
+            background: rgba(15, 23, 42, 0.6); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 16px; 
+            padding: 30px; 
+            backdrop-filter: blur(4px);
+        }
+        .tile .icon { font-size: 40px; color: #38bdf8; margin-bottom: 20px; }
+        .tile h3 { color: #f1f5f9; font-size: 20px; margin-bottom: 12px; }
+
+        .bullet-list { list-style: none; padding: 0; }
+        .bullet-list li { position: relative; padding-left: 40px; margin-bottom: 20px; }
+        .bullet-list i { position: absolute; left: 0; top: 5px; color: #38bdf8; font-size: 20px; }
+
+        .badge { display: inline-block; background-color: rgba(15, 23, 42, 0.8); color: #38bdf8; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; margin-right: 6px; margin-bottom: 8px; border: 1px solid rgba(56, 189, 248, 0.2); }
+        .profile-highlight { background-color: rgba(15, 23, 42, 0.5); border-left: 4px solid #0284c7; padding: 20px; border-radius: 0 12px 12px 0; margin-bottom: 25px; font-style: italic; color: #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container" style="text-align: center; padding: 100px 40px; background-color: rgba(30, 41, 59, 0.3);">
+        <h3 style="color: #38bdf8; letter-spacing: 4px; margin-bottom: 15px; font-size: 18px;">IDENTIDAD PROFESIONAL</h3>
+        <h1 style="font-size: 65px; line-height: 1.1; margin-bottom: 15px; font-weight: 700; letter-spacing: -1px;">LUIS <span style="color: #38bdf8;">FREITES</span></h1>
+        <p style="font-size: 26px; color: #f1f5f9; font-weight: 600;">Fullstack Developer Trainee & Especialista en Soluciones TI</p>
+        <p style="font-size: 16px; color: #94a3b8; margin-top: 10px;"><i class="fa-solid fa-location-dot"></i> Quilpué, Región de Valparaíso, Chile</p>
+        <div style="height: 4px; width: 80px; background: #38bdf8; margin: 35px auto;"></div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Sobre Mí / En Formación</h2>
+        <p>
+            Soy un profesional del área tecnológica con una sólida trayectoria resolviendo problemas complejos en entornos reales (infraestructura y hardware), actualmente en pleno proceso de especialización y reconversión hacia el <strong>Desarrollo de Software Fullstack</strong>. 
+        </p>
+        <div class="profile-highlight">
+            "Mi valor diferencial como desarrollador en formación es mi perfil híbrido: aporto la dedicación de aprender código web moderno junto con una experiencia previa de campo en la arquitectura de sistemas físicos, automatización y gestión orientada a resultados."
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Logro Académico Destacado</h2>
+        <div class="two-column">
+            <div>
+                <h3>Especialización Fullstack Developer</h3>
+                <p style="color: #38bdf8; font-weight: bold; margin-bottom: 15px;">Programa de Formación Profesional Activo (2026)</p>
+                <p>Este entrenamiento representa mi mayor hito de transformación técnica reciente, capacitándome para construir soluciones de software de extremo a extremo.</p>
+                <ul class="bullet-list" style="margin-top: 15px;">
+                    <li><i class="fa-solid fa-code"></i> <strong>Frontend & Backend:</strong> Fundamentos sólidos en la arquitectura de aplicaciones web modernas.</li>
+                    <li><i class="fa-solid fa-database"></i> <strong>Bases de Datos:</strong> Modelado y persistencia de información.</li>
+                    <li><i class="fa-solid fa-users"></i> <strong>Metodologías Ágiles:</strong> Trabajo colaborativo simulando células reales de desarrollo.</li>
+                </ul>
+            </div>
+            <div>
+                <div class="tile" style="text-align: center; padding: 40px;">
+                    <i class="fa-solid fa-laptop-code" style="font-size: 60px; color: #38bdf8; margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 20px; margin-bottom: 10px; color: #fff;">Proyecto Base del Curso</h4>
+                    <div class="badge">JavaScript (ES6+)</div>
+                    <div class="badge">HTML5 & CSS3</div>
+                    <div class="badge">Git & GitHub</div>
+                    <p style="font-size: 14px; margin-top: 10px;">En desarrollo y modularización constante para la entrega final del portafolio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Experiencia Laboral Relevante</h2>
+        <h3 style="margin-bottom: 10px; color: #f1f5f9;">Consultor de Soluciones TI e Infraestructura Física</h3>
+        <p style="font-style: italic; margin-bottom: 20px; color: #94a3b8;">Trayectoria Previa Relevante Aplicada al Software</p>
+        <p>
+            Aunque actualmente me enfoco en adquirir mi primera experiencia como programador, mi bagaje en el sector de soluciones técnicas me ha dotado de habilidades de ingeniería muy valoradas:
+        </p>
+        <ul class="bullet-list" style="margin-top: 15px;">
+            <li><i class="fa-solid fa-magnifying-glass-chart"></i> <strong>Resolución de Problemas (Troubleshooting):</strong> Experiencia diagnosticando fallas de hardware y redes, destreza directamente transferible a la depuración de código (debugging).</li>
+            <li><i class="fa-solid fa-comments"></i> <strong>Preventa y Negociación:</strong> Experiencia traduciendo necesidades comerciales complejas de clientes en soluciones viables, ideal para el levantamiento de requerimientos de software.</li>
+        </ul>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Conocimiento Técnico Especializado</h2>
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-house-signal"></i></div>
+                <h3>Ecosistemas IoT / Domótica</h3>
+                <p>Investigación e integración independiente de sensores de microondas de alta tecnología (<strong>mmWave</strong>) para automatización residencial precisa.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Hardware & Conectividad</h3>
+                <p>Dominio práctico de mantenimiento de hardware, conectividad física y redes residenciales de baja tensión.</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>Mentalidad Trainee</h3>
+                <p>Compromiso constante con el autoaprendizaje, atención extrema a las especificaciones técnicas finas y búsqueda incesante de eficiencia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container" style="text-align: center; padding: 60px 20px;">
+        <h2 style="color: #38bdf8; font-size: 36px; margin-bottom: 30px;">¿Conectamos en la industria?</h2>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="badge" style="padding: 12px 20px; font-size: 16px;"><i class="fa-brands fa-github"></i> github.com/tu-usuario</div>
+            <div class="badge" style="padding: 12px 20px; font-size: 16px;"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/tu-usuario</div>
+            <div class="badge" style="padding: 12px 20px; font-size: 16px;"><i class="fa-solid fa-envelope"></i> tu-correo@email.com</div>
+        </div>
+    </div>
+
+</body>
+</html>
