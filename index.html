@@ -11,17 +11,17 @@
     <style>
         * { box-sizing: border-box; }
         
-        /* FONDO DETECTADO: Corregido para buscar exactamente 'tu-foto.jpg.jpg' y con un filtro más suave para que sea muy visible */
+        /* FONDO CLARO Y DEGRADADO: Foto proporcional y centrada con un tinte grisáceo/blanco suave */
         body { 
-            background: linear-gradient(rgba(241, 245, 249, 0.2), rgba(226, 232, 240, 0.3)), 
-                        url('tu-foto.jpg.jpg') no-repeat center center fixed; 
+            background: linear-gradient(rgba(241, 245, 249, 0.45), rgba(226, 232, 240, 0.55)), 
+                        url('tu-foto.jpg') no-repeat center center fixed; 
             background-size: contain; 
-            background-color: #e2e8f0; /* Fondo gris claro de estudio */
+            background-color: #f1f5f9; /* Color gris claro de respaldo */
             margin: 0; 
             padding: 40px 20px; 
             display: flex; 
             flex-direction: column; 
-            gap: 20px; 
+            gap: 20px; /* Cajas ordenadas estilo diapositivas del diseño que te gustó */
             align-items: center;
             min-height: 100vh;
         }
@@ -30,15 +30,15 @@
         .slide-container {
             width: 100%;
             max-width: 850px; 
-            background-color: rgba(255, 255, 255, 0.55); /* Base blanca translúcida ideal para escala de grises */
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
-            color: #334155; 
+            background-color: rgba(255, 255, 255, 0.45); /* Base blanca ultra translúcida */
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px);
+            color: #334155; /* Texto gris oscuro/pizarra de alta legibilidad */
             font-family: 'Poppins', sans-serif;
             border-radius: 16px; 
             padding: 25px 40px; 
-            box-shadow: 0 10px 30px rgba(148, 163, 184, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.7); 
+            box-shadow: 0 10px 30px rgba(148, 163, 184, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.6); /* Borde de cristal brillante claro */
             text-align: center;
         }
 
@@ -170,7 +170,7 @@
     </div>
 
     <div class="slide-container">
-        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> LOGRO ACADÉMICO DESTACADO</h2>
+        <h2 class="section-title"><i class="fa-solid fa-graduationcap"></i> LOGRO ACADÉMICO DESTACADO</h2>
         <p>Especialización Fullstack Developer (2026) - Capacitado en arquitecturas modernas de extremo a extremo.</p>
     </div>
 
@@ -189,7 +189,7 @@
         <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> ¿CONECTAMOS EN LA INDUSTRIA?</h2>
         <p style="font-size: 15px; margin-bottom: 10px;">Dejar un mensaje para coordinar entrevistas o colaboraciones técnicas.</p>
         
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias! Formulario enviado correctamente (Simulación de Frontend).');">
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Gracias Luis! Formulario enviado correctamente (Simulación de Frontend).');">
             <div class="form-group">
                 <label for="name">Nombre Completo</label>
                 <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
