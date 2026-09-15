@@ -6,6 +6,8 @@
     <title>Portafolio - Luis Freites</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Librería Devicon para logos técnicos exactos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.15.15/devicon.min.css">
     <style>
         :root {
             --bg-dark: #121212;
@@ -62,6 +64,42 @@
             color: var(--accent-yellow);
         }
 
+        /* Estilos para Contenedor de Logos Tech */
+        .tech-logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-logo-item {
+            background-color: #141414;
+            border: 1px solid var(--accent-yellow);
+            border-radius: 10px;
+            padding: 8px 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-yellow);
+            font-size: 1.4rem;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .tech-logo-item:hover {
+            background-color: var(--accent-yellow);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+
+        .tech-logo-item span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-left: 6px;
+            font-family: sans-serif;
+        }
+
         .carousel-control-prev, .carousel-control-next {
             width: 50px;
             height: 50px;
@@ -93,18 +131,6 @@
             height: 10px;
             border-radius: 50%;
             margin: 0 5px;
-        }
-
-        .badge-yellow {
-            background-color: rgba(255, 193, 7, 0.12);
-            color: var(--accent-yellow);
-            border: 1px solid var(--accent-yellow);
-            font-weight: 600;
-            font-size: 0.76rem;
-            padding: 3px 8px;
-            border-radius: 6px;
-            margin: 2px;
-            display: inline-block;
         }
 
         .table-dark-custom {
@@ -145,18 +171,18 @@
             
             <div class="carousel-inner slide-card">
 
-                <!-- SLIDE 1: PORTADA Y PERFIL -->
+                <!-- SLIDE 1: PORTADA Y PERFIL CON LOGOS -->
                 <div class="carousel-item active p-4 p-md-5">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
                         <div class="accent-box">
-                            <i class="fa-solid fa-user-gear fa-lg me-2"></i> PERFIL IT & SKILLS
+                            <i class="fa-solid fa-user-gear fa-lg me-2"></i> PERFIL IT & LOGOS TECH
                         </div>
                         <span class="text-muted small">Diapositiva 01 / 04</span>
                     </div>
 
                     <div class="row align-items-center">
                         <div class="col-md-4 text-center mb-3 mb-md-0">
-                            <img src="tu-foto.jpg" alt="Luis Freites" class="rounded-circle img-fluid border border-2 border-warning" style="width: 140px; height: 140px; object-fit: cover;">
+                            <img src="tu-foto.jpg" alt="Luis Freites" class="rounded-circle img-fluid border border-2 border-warning" style="width: 135px; height: 135px; object-fit: cover;">
                             <h2 class="h5 fw-bold mt-2 mb-0">Luis Freites</h2>
                             <p class="small text-warning mb-2">Desarrollador FullStack Java Trainee</p>
                             <div class="d-flex justify-content-center gap-2">
@@ -167,34 +193,36 @@
                         <div class="col-md-8 border-start border-secondary ps-md-4">
                             <h1 class="slide-title mb-1">MI <span class="highlight-text">PORTAFOLIO</span></h1>
                             <p class="text-warning small mb-2">Talento Digital para Chile | Bootcamp Alkemy</p>
-                            <p class="text-secondary small mb-3">
-                                Profesional con sólida trayectoria en gestión comercial y sistemas ERP, reconvertido al desarrollo de software FullStack[cite: 4]. Integro conocimientos de negocio con desarrollo MVC en Java, backend empresarial y maquetación web responsive[cite: 3, 4].
+                            <p class="text-secondary small mb-2">
+                                Profesional con amplia trayectoria en gestión comercial y sistemas ERP, reconvertido al desarrollo de software FullStack. Integro conocimientos de negocio con desarrollo MVC, bases de datos relacionales y APIs REST.
                             </p>
                             
-                            <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-layer-group me-1"></i> Stack Tecnológico Aprendido:</h3>
-                            <div class="mb-2">
-                                <span class="badge-yellow">Java</span>
-                                <span class="badge-yellow">JEE</span>
-                                <span class="badge-yellow">Spring Framework</span>
-                                <span class="badge-yellow">Spring Boot</span>
-                                <span class="badge-yellow">MySQL</span>
-                                <span class="badge-yellow">HTML5</span>
-                                <span class="badge-yellow">CSS3</span>
-                                <span class="badge-yellow">JavaScript</span>
-                                <span class="badge-yellow">jQuery</span>
-                                <span class="badge-yellow">Bootstrap 5</span>
-                                <span class="badge-yellow">H2 Database</span>
+                            <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-code me-1"></i> Tecnologías Dominadas:</h3>
+                            
+                            <!-- LOGOS GRÁFICOS DE TECNOLOGÍAS -->
+                            <div class="tech-logos-container">
+                                <div class="tech-logo-item" title="Java"><i class="devicon-java-plain"></i><span>Java</span></div>
+                                <div class="tech-logo-item" title="JEE"><i class="fa-solid fa-server"></i><span>JEE</span></div>
+                                <div class="tech-logo-item" title="Spring Framework"><i class="devicon-spring-plain"></i><span>Spring</span></div>
+                                <div class="tech-logo-item" title="Spring Boot"><i class="devicon-spring-plain"></i><span>Boot</span></div>
+                                <div class="tech-logo-item" title="MySQL"><i class="devicon-mysql-plain"></i><span>MySQL</span></div>
+                                <div class="tech-logo-item" title="HTML5"><i class="devicon-html5-plain"></i><span>HTML5</span></div>
+                                <div class="tech-logo-item" title="CSS3"><i class="devicon-css3-plain"></i><span>CSS3</span></div>
+                                <div class="tech-logo-item" title="JavaScript"><i class="devicon-javascript-plain"></i><span>JS</span></div>
+                                <div class="tech-logo-item" title="jQuery"><i class="devicon-jquery-plain"></i><span>jQuery</span></div>
+                                <div class="tech-logo-item" title="Bootstrap 5"><i class="devicon-bootstrap-plain"></i><span>Bootstrap</span></div>
                             </div>
-                            <p class="extra-small text-muted mb-0"><i class="fa-solid fa-envelope me-1 text-warning"></i> luigefre@gmail.com | <i class="fa-solid fa-location-dot me-1 text-warning"></i> Quilpué, Chile[cite: 4]</p>
+
+                            <p class="extra-small text-muted mt-3 mb-0"><i class="fa-solid fa-envelope me-1 text-warning"></i> luigefre@gmail.com | <i class="fa-solid fa-location-dot me-1 text-warning"></i> Quilpué, Chile</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- SLIDE 2: CASO DE ESTUDIO (SPRINGEDUMANAGER & OTROS) -->
+                <!-- SLIDE 2: CASO DE ESTUDIO CON LOGOS -->
                 <div class="carousel-item p-4 p-md-5">
                     <div class="d-flex justify-content-between align-items-start mb-3">
                         <div class="accent-box">
-                            <i class="fa-solid fa-code fa-lg me-2"></i> PROYECTOS TÉCNICOS
+                            <i class="fa-solid fa-laptop-code fa-lg me-2"></i> PROYECTOS TÉCNICOS
                         </div>
                         <span class="text-muted small">Diapositiva 02 / 04</span>
                     </div>
@@ -207,14 +235,14 @@
                     <div class="row g-2 small text-secondary mb-3">
                         <div class="col-md-6">
                             <div class="p-3 bg-dark rounded border border-secondary h-100">
-                                <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-triangle-exclamation me-1"></i> Desafío Técnico</h3>
-                                <p class="mb-0 extra-small">Configurar control de acceso estricto por roles (`ADMIN`/`USER`) en Spring Framework / Security para restringir la creación de cursos y bloquear accesos no autorizados (HTTP 403)[cite: 3].</p>
+                                <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-shield-halved me-1"></i> Desafío Técnico</h3>
+                                <p class="mb-0 extra-small">Configurar control de acceso estricto por roles (`ADMIN`/`USER`) en Spring Security para restringir la creación de cursos y bloquear accesos no autorizados (HTTP 403).</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="p-3 bg-dark rounded border border-secondary h-100">
                                 <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-circle-check me-1"></i> Solución & Métricas</h3>
-                                <p class="mb-0 extra-small">Persistencia relacional con Spring Data JPA, vistas dinámicas Thymeleaf y Bootstrap 5. 100% de eficacia en bloqueo de peticiones[cite: 3].</p>
+                                <p class="mb-0 extra-small">Persistencia relacional con Spring Data JPA, vistas dinámicas Thymeleaf y Bootstrap 5. 100% de eficacia en bloqueo de peticiones.</p>
                             </div>
                         </div>
                     </div>
@@ -222,16 +250,26 @@
                     <div class="row g-2">
                         <div class="col-md-6">
                             <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white small">2. Base de Datos Relacional MySQL / JEE:</strong><br>
-                                <span class="text-muted extra-small">Diseño de tablas relacionales, consultas SQL y modelos de datos[cite: 3].</span><br>
-                                <span class="badge-yellow">MySQL</span> <span class="badge-yellow">JEE</span> <span class="badge-yellow">Spring Data JPA</span>
+                                <strong class="text-white small">2. Persistencia MySQL & JEE:</strong><br>
+                                <span class="text-muted extra-small mb-1 d-block">Modelo relacional, consultas SQL y persistencia backend.</span>
+                                <div class="d-flex gap-2">
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-mysql-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-java-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-spring-plain"></i></span>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white small">3. Desarrollo Frontend Dinámico:</strong><br>
-                                <span class="text-muted extra-small">Maquetación responsive e interacción con librerías web[cite: 3].</span><br>
-                                <span class="badge-yellow">HTML5</span> <span class="badge-yellow">CSS3</span> <span class="badge-yellow">JavaScript</span> <span class="badge-yellow">jQuery</span> <span class="badge-yellow">Bootstrap 5</span>
+                                <strong class="text-white small">3. Frontend Dinámico:</strong><br>
+                                <span class="text-muted extra-small mb-1 d-block">Interfaz responsive e interacción con DOM y librerías.</span>
+                                <div class="d-flex gap-2">
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-html5-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-css3-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-javascript-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-jquery-plain"></i></span>
+                                    <span class="tech-logo-item py-1 px-2" style="font-size:0.9rem;"><i class="devicon-bootstrap-plain"></i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -246,7 +284,7 @@
                         <span class="text-muted small">Diapositiva 03 / 04</span>
                     </div>
 
-                    <h2 class="h5 fw-bold text-white mb-2">Simulación Técnica: <span class="text-warning">Mercado Libre Chile</span>[cite: 3]</h2>
+                    <h2 class="h5 fw-bold text-white mb-2">Simulación Técnica: <span class="text-warning">Mercado Libre Chile</span></h2>
                     
                     <div class="table-responsive mb-3">
                         <table class="table table-dark-custom table-sm extra-small mb-0">
@@ -254,9 +292,9 @@
                                 <tr><th>Criterio</th><th>Análisis Técnico</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td><strong>Propósito</strong></td><td>Democratizar el comercio y servicios financieros en LATAM[cite: 3].</td></tr>
-                                <tr><td><strong>Stack Técnico</strong></td><td>Microservicios con Java, Spring Framework, MySQL, JavaScript, React, Docker y AWS[cite: 3].</td></tr>
-                                <tr><td><strong>Metodología</strong></td><td>CI/CD, Scrum/Kanban y cultura DevOps de alta escalabilidad[cite: 3].</td></tr>
+                                <tr><td><strong>Propósito</strong></td><td>Democratizar el comercio y servicios financieros en LATAM.</td></tr>
+                                <tr><td><strong>Stack Técnico</strong></td><td>Microservicios con Java, Spring, MySQL, JavaScript, React, Docker y AWS.</td></tr>
+                                <tr><td><strong>Metodología</strong></td><td>CI/CD, Scrum/Kanban y cultura DevOps de alta escalabilidad.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -265,16 +303,16 @@
                         <div class="col-md-6">
                             <h3 class="h6 text-warning fw-bold mb-1">Propuesta de Valor</h3>
                             <ul class="ps-3 mb-0">
-                                <li>Dominio operativo previo en ERPs, inventarios y procesos comerciales[cite: 4].</li>
-                                <li>Capacidad de desarrollo backend con Java, Spring Framework y MySQL[cite: 3].</li>
-                                <li>Manejo de interfaces frontend con HTML, CSS, JavaScript y Bootstrap.</li>
+                                <li>Dominio operativo previo en ERPs, inventarios y procesos comerciales.</li>
+                                <li>Capacidad backend en Java, Spring Framework, JEE y MySQL.</li>
+                                <li>Desarrollo frontend en HTML5, CSS3, JS, jQuery y Bootstrap.</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <h3 class="h6 text-warning fw-bold mb-1">Preguntas para Reclutador</h3>
                             <ol class="ps-3 mb-0">
-                                <li>¿Cómo estructuran el acompañamiento técnico para perfil Trainee/Junior[cite: 3]?</li>
-                                <li>¿Qué métricas evalúan la adaptación a la célula de desarrollo[cite: 3]?</li>
+                                <li>¿Cómo estructuran el acompañamiento técnico para perfil Trainee/Junior?</li>
+                                <li>¿Qué métricas evalúan la adaptación a la célula de desarrollo?</li>
                             </ol>
                         </div>
                     </div>
@@ -289,15 +327,15 @@
                         <span class="text-muted small">Diapositiva 04 / 04</span>
                     </div>
 
-                    <h2 class="h5 fw-bold text-white mb-2">Análisis Estratégico Personal <span class="text-warning">(PLUS)</span>[cite: 3]</h2>
+                    <h2 class="h5 fw-bold text-white mb-2">Análisis Estratégico Personal <span class="text-warning">(PLUS)</span></h2>
 
                     <div class="row g-2 extra-small">
                         <div class="col-6">
                             <div class="foda-box">
                                 <h3 class="h6 text-success fw-bold mb-1"><i class="fa-solid fa-shield"></i> Fortalezas</h3>
                                 <ul class="text-secondary ps-3 mb-0">
-                                    <li>Trayectoria previa en administración y ERPs[cite: 4].</li>
-                                    <li>Stack FullStack completo: Java, Spring, MySQL, JS, HTML/CSS[cite: 3].</li>
+                                    <li>Trayectoria previa en administración y ERPs.</li>
+                                    <li>Dominio FullStack: Java, JEE, Spring, MySQL, JS, jQuery, HTML/CSS.</li>
                                 </ul>
                             </div>
                         </div>
@@ -305,8 +343,8 @@
                             <div class="foda-box">
                                 <h3 class="h6 text-danger fw-bold mb-1"><i class="fa-solid fa-circle-exclamation"></i> Debilidades</h3>
                                 <ul class="text-secondary ps-3 mb-0">
-                                    <li>Experiencia inicial en entornos de producción masiva[cite: 3].</li>
-                                    <li>Microservicios avanzados e infraestructura Cloud por profundizar[cite: 3].</li>
+                                    <li>Experiencia inicial en entornos de producción masiva.</li>
+                                    <li>Microservicios avanzados e infraestructura Cloud por profundizar.</li>
                                 </ul>
                             </div>
                         </div>
@@ -314,8 +352,8 @@
                             <div class="foda-box">
                                 <h3 class="h6 text-info fw-bold mb-1"><i class="fa-solid fa-lightbulb"></i> Oportunidades</h3>
                                 <ul class="text-secondary ps-3 mb-0">
-                                    <li>Alta demanda de desarrolladores Java/Spring Boot[cite: 3].</li>
-                                    <li>Gran valoración de perfiles híbridos (negocio + código)[cite: 3, 4].</li>
+                                    <li>Alta demanda de desarrolladores Java/Spring Boot.</li>
+                                    <li>Gran valoración de perfiles híbridos (negocio + código).</li>
                                 </ul>
                             </div>
                         </div>
@@ -323,8 +361,8 @@
                             <div class="foda-box">
                                 <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-triangle-exclamation"></i> Amenazas</h3>
                                 <ul class="text-secondary ps-3 mb-0">
-                                    <li>Competencia alta en convocatorias Trainee[cite: 3].</li>
-                                    <li>Evolución acelerada del mercado tecnológico[cite: 3].</li>
+                                    <li>Competencia alta en convocatorias Trainee.</li>
+                                    <li>Evolución acelerada del mercado tecnológico.</li>
                                 </ul>
                             </div>
                         </div>
