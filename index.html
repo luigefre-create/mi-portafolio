@@ -4,269 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Luis Freites</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para íconos UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
         :root {
-            --bg-dark: #121212;
-            --card-dark: #1e1e1e;
-            --accent-yellow: #ffc107;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --border-color: #2d2d2d;
+            --bg-dark-1: #0b0f19;
+            --bg-dark-2: #1e293b;
+            --card-bg: #111827;
+            --border-color: #334155;
+            --accent-gold: #ffc107;
+            --accent-cyan: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-main);
+            background: linear-gradient(135deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 60%, #0f172a 100%);
+            background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .presentation-deck {
-            max-width: 1050px;
-            margin: auto;
-            position: relative;
-        }
-
-        .slide-card {
-            background-color: var(--card-dark);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            min-height: 540px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            overflow: hidden;
-        }
-
-        .accent-box {
-            background-color: var(--accent-yellow);
-            color: #000;
-            padding: 14px 20px;
-            display: inline-block;
-            font-weight: 800;
-            border-radius: 0 0 12px 0;
             font-size: 0.9rem;
         }
 
-        .slide-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .highlight-text {
-            color: var(--accent-yellow);
-        }
-
-        /* Tarjetas de Logos SVG Directos (Colores Originales) */
-        .tech-logos-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .tech-logo-card {
-            background-color: #171717;
-            border: 1px solid #333333;
+        /* Tarjetas Compactas */
+        .card-compact {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            width: 50px;
-            height: 50px;
-            display: inline-flex;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            height: 100%;
+        }
+
+        .hero-avatar {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Contenedor de Logos SVG con Colores Originales */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+            gap: 8px;
+        }
+
+        .tech-item {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            height: 42px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .tech-logo-card.sm {
-            width: 38px;
-            height: 38px;
-            padding: 6px;
+        .tech-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+            background-color: #111827;
         }
 
-        .tech-logo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .tech-item svg {
+            width: 24px;
+            height: 24px;
         }
 
-        .tech-logo-card:hover {
-            transform: translateY(-3px) scale(1.08);
-            border-color: var(--accent-yellow);
-            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.3);
-            background-color: #222222;
-        }
-
-        /* Contacto e Información */
-        .contact-info-text {
-            color: #f4f4f5 !important;
-            font-weight: 600;
-            font-size: 0.92rem;
-        }
-
-        .contact-info-text a {
-            color: #f4f4f5;
-            text-decoration: none;
-        }
-
-        .contact-info-text a:hover {
-            color: var(--accent-yellow);
-            text-decoration: underline;
-        }
-
-        .carousel-control-prev, .carousel-control-next {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 193, 7, 0.15);
-            border: 1px solid var(--accent-yellow);
-            border-radius: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0.85;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-control-prev:hover, .carousel-control-next:hover {
-            background-color: var(--accent-yellow);
-            opacity: 1;
-        }
-
-        .carousel-control-prev:hover .carousel-control-prev-icon,
-        .carousel-control-next:hover .carousel-control-next-icon {
-            filter: invert(1);
-        }
-
-        .carousel-control-prev { left: -65px; }
-        .carousel-control-next { right: -65px; }
-
-        .carousel-indicators [data-bs-target] {
-            background-color: var(--accent-yellow);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
-
-        .table-dark-custom {
+        /* Tablas */
+        .table-custom {
             color: var(--text-main);
             border-color: var(--border-color);
+            margin-bottom: 0;
         }
-        .table-dark-custom th {
-            background-color: var(--accent-yellow);
+        .table-custom th {
+            background-color: var(--accent-gold);
             color: #000;
-            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 6px 10px;
         }
-        .table-dark-custom td {
-            background-color: #141414;
+        .table-custom td {
+            background-color: #1e293b;
             color: var(--text-muted);
+            font-size: 0.8rem;
+            padding: 6px 10px;
             border-color: var(--border-color);
         }
 
-        .foda-box {
-            padding: 12px;
-            border-radius: 8px;
+        /* FODA */
+        .foda-cell {
+            padding: 10px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            background-color: #141414;
+            background-color: #1e293b;
             height: 100%;
         }
 
-        @media (max-width: 992px) {
-            .carousel-control-prev { left: 10px; }
-            .carousel-control-next { right: 10px; }
-            .presentation-deck { padding: 0 15px; }
-        }
+        .text-gold { color: var(--accent-gold) !important; }
+        .text-cyan { color: var(--accent-cyan) !important; }
+        .extra-small { font-size: 0.78rem; }
     </style>
 </head>
-<body>
+<body class="py-3">
 
-    <div class="container my-3 presentation-deck">
+    <div class="container-fluid px-md-4" style="max-width: 1300px;">
         
-        <div id="portfolioCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+        <!-- FILA SUPERIOR: PERFIL + PROYECTOS -->
+        <div class="row g-3 mb-3">
             
-            <div class="carousel-inner slide-card">
-
-                <!-- SLIDE 1: PERFIL Y LOGOS VECTORIALES SVG -->
-                <div class="carousel-item active p-4 p-md-5">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div class="accent-box">
-                            <i class="fa-solid fa-user-gear fa-lg me-2"></i> PERFIL IT & TECNOLOGÍAS
+            <!-- COLUMNA IZQUIERDA: PERFIL, CONTACTO Y LOGOS OFICIALES -->
+            <div class="col-lg-4">
+                <div class="card-compact p-3 d-flex flex-column justify-content-between">
+                    <div>
+                        <!-- Avatar e Identidad -->
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="tu-foto.jpg" alt="Luis Freites" class="hero-avatar">
+                            <div>
+                                <h1 class="h5 fw-bold mb-0 text-white">Luis Freites</h1>
+                                <p class="text-gold fw-semibold mb-1 extra-small">Desarrollador FullStack Java Trainee</p>
+                                <p class="text-cyan mb-0 extra-small"><i class="fa-solid fa-graduation-cap"></i> Talento Digital / Alkemy</p>
+                            </div>
                         </div>
-                        <span class="text-muted small">Diapositiva 01 / 04</span>
+
+                        <!-- Breve Resumen -->
+                        <p class="text-secondary extra-small mb-3">
+                            Perfil híbrido con amplia experiencia en gestión comercial y sistemas ERP, reconvertido al desarrollo FullStack Java, MVC y bases de datos relacionales.
+                        </p>
+
+                        <!-- Tecnologías con Logos en sus Colores Originales -->
+                        <h2 class="h6 text-gold fw-bold mb-2"><i class="fa-solid fa-layer-group me-1"></i> Stack Tecnológico:</h2>
+                        
+                        <div class="tech-grid mb-3">
+                            <!-- Java -->
+                            <div class="tech-item" title="Java"><svg viewBox="0 0 24 24"><path fill="#007396" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/><path fill="#f89820" d="M8.5 13.5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5.5.2.5.5-.2.5-.5.5z"/></svg></div>
+                            <!-- Spring -->
+                            <div class="tech-item" title="Spring Framework / Boot"><svg viewBox="0 0 24 24"><path fill="#6DB33F" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.6 7.2c-.4 2.1-2.1 3.8-4.3 4.2-1.3.2-2.6-.1-3.6-.8l-.8.8c-.2.2-.5.2-.7 0s-.2-.5 0-.7l.8-.8c-.7-1-1-2.3-.8-3.6.4-2.2 2.1-3.9 4.2-4.3 2.8-.5 5.2 1.6 5.2 4.4 0 .3 0 .6-.1.8z"/></svg></div>
+                            <!-- MySQL -->
+                            <div class="tech-item" title="MySQL"><svg viewBox="0 0 24 24"><path fill="#00618A" d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm1 14h-2v-2h2v2zm1.73-7.73l-.9.9c-.72.73-1.17 1.25-1.17 2.33h-1.67v-.33c0-1.1.45-1.85 1.17-2.58l1.03-1.03c.31-.31.5-.73.5-1.23 0-.92-.75-1.67-1.67-1.67s-1.67.75-1.67 1.67H9.83C9.83 5.92 11.25 4.5 13 4.5s3.17 1.42 3.17 3.17c0 .93-.38 1.77-.9 2.33z"/><path fill="#F29111" d="M12 15h2v2h-2z"/></svg></div>
+                            <!-- HTML5 -->
+                            <div class="tech-item" title="HTML5"><svg viewBox="0 0 24 24"><path fill="#E34F26" d="M1.5 0h21l-1.91 21.563L11.97 24 3.42 21.56 1.5 0zm15.75 7.5H7.01l.24 2.66h9.72l-.76 8.5-4.22 1.18-4.24-1.18-.28-3.16h2.47l.14 1.55 1.91.52 1.91-.52.2-2.23H6.53l-.74-8.32h11.71l-.25 1.5z"/></svg></div>
+                            <!-- CSS3 -->
+                            <div class="tech-item" title="CSS3"><svg viewBox="0 0 24 24"><path fill="#1572B6" d="M1.5 0h21l-1.91 21.563L11.97 24 3.42 21.56 1.5 0zm15.75 7.5H7.01l.24 2.66h9.72l-.76 8.5-4.22 1.18-4.24-1.18-.28-3.16h2.47l.14 1.55 1.91.52 1.91-.52.2-2.23H6.53l-.74-8.32h11.71l-.25 1.5z"/></svg></div>
+                            <!-- JavaScript -->
+                            <div class="tech-item" title="JavaScript"><rect width="24" height="24" fill="#F7DF1E" rx="3"/><text x="13" y="18" font-family="sans-serif" font-weight="bold" font-size="12" fill="#000">JS</text></div>
+                            <!-- jQuery -->
+                            <div class="tech-item" title="jQuery"><svg viewBox="0 0 24 24"><path fill="#0769AD" d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2zm3.5 10a3.5 3.5 0 1 1-3.5-3.5 3.5 3.5 0 0 1 3.5 3.5z"/></svg></div>
+                            <!-- Bootstrap 5 -->
+                            <div class="tech-item" title="Bootstrap 5"><rect width="24" height="24" fill="#7952B3" rx="4"/><text x="7" y="17" font-family="sans-serif" font-weight="900" font-size="14" fill="#FFF">B</text></div>
+                            <!-- JEE -->
+                            <div class="tech-item" title="JEE / Enterprise"><rect width="24" height="24" fill="#F80000" rx="4"/><text x="3" y="16" font-family="sans-serif" font-weight="bold" font-size="10" fill="#FFF">JEE</text></div>
+                        </div>
                     </div>
 
-                    <div class="row align-items-center">
-                        <div class="col-md-4 text-center mb-3 mb-md-0">
-                            <img src="tu-foto.jpg" alt="Luis Freites" class="rounded-circle img-fluid border border-2 border-warning" style="width: 140px; height: 140px; object-fit: cover;">
-                            <h2 class="h5 fw-bold mt-2 mb-0">Luis Freites</h2>
-                            <p class="small text-warning mb-2">Desarrollador FullStack Java Trainee</p>
-                            <div class="d-flex justify-content-center gap-2">
-                                <a href="https://github.com/luigefre-create" target="_blank" class="btn btn-outline-warning btn-sm"><i class="fa-brands fa-github"></i> GitHub</a>
-                                <a href="https://www.linkedin.com" target="_blank" class="btn btn-warning btn-sm text-dark"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                            </div>
-                        </div>
-                        <div class="col-md-8 border-start border-secondary ps-md-4">
-                            <h1 class="slide-title mb-1">MI <span class="highlight-text">PORTAFOLIO</span></h1>
-                            <p class="text-warning small mb-2">Talento Digital para Chile | Bootcamp Alkemy</p>
-                            <p class="text-secondary small mb-3">
-                                Profesional con amplia trayectoria en gestión comercial y sistemas ERP, reconvertido al desarrollo de software FullStack. Integro conocimientos de negocio con desarrollo MVC, bases de datos relacionales y APIs REST.
-                            </p>
-                            
-                            <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-code me-1"></i> Tecnologías Dominadas:</h3>
-                            
-                            <!-- IMÁGENES SVG DIRECTAS CON COLORES ORIGINALES -->
-                            <div class="tech-logos-grid">
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="Java"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="JEE / Enterprise"><img src="https://cdn.simpleicons.org/jakartaee/F80000" alt="JEE"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="Spring Framework"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/spring/spring-original.svg" alt="Spring"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="Spring Boot"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/springboot/springboot-original.svg" alt="Spring Boot"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="MySQL"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="HTML5"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="CSS3"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="JavaScript"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="jQuery"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery"></div>
-                                <div class="tech-logo-card" data-bs-toggle="tooltip" title="Bootstrap 5"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap 5"></div>
-                            </div>
-
-                            <p class="contact-info-text mt-4 mb-0">
-                                <i class="fa-solid fa-envelope me-1 text-warning"></i> <a href="mailto:luigefre@gmail.com">luigefre@gmail.com</a>
-                                &nbsp;&nbsp;|&nbsp;&nbsp;
-                                <i class="fa-solid fa-location-dot me-1 text-warning"></i> <span>Quilpué, Chile</span>
-                            </p>
+                    <!-- Contacto & Enlaces -->
+                    <div class="pt-2 border-top border-secondary">
+                        <p class="mb-2 extra-small text-white">
+                            <i class="fa-solid fa-envelope text-gold me-1"></i> <a href="mailto:luigefre@gmail.com" class="text-white text-decoration-none">luigefre@gmail.com</a> &nbsp;|&nbsp;
+                            <i class="fa-solid fa-location-dot text-gold me-1"></i> Quilpué, Chile
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="https://github.com/luigefre-create" target="_blank" class="btn btn-outline-warning btn-sm extra-small py-1 flex-grow-1"><i class="fa-brands fa-github me-1"></i> GitHub</a>
+                            <a href="https://www.linkedin.com" target="_blank" class="btn btn-warning btn-sm text-dark extra-small py-1 flex-grow-1 fw-bold"><i class="fa-brands fa-linkedin me-1"></i> LinkedIn</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- SLIDE 2: PROYECTOS TÉCNICOS -->
-                <div class="carousel-item p-4 p-md-5">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="accent-box">
-                            <i class="fa-solid fa-laptop-code fa-lg me-2"></i> PROYECTOS TÉCNICOS
-                        </div>
-                        <span class="text-muted small">Diapositiva 02 / 04</span>
-                    </div>
-
+            <!-- COLUMNA DERECHA: PROYECTOS TÉCNICOS (CASO DE ESTUDIO) -->
+            <div class="col-lg-8">
+                <div class="card-compact p-3 border-warning">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h2 class="h5 fw-bold mb-0 text-white">1. SpringEduManager <span class="badge bg-warning text-dark fs-6 ms-2">Caso de Estudio</span></h2>
-                        <a href="https://github.com/luigefre-create/SpringEduManager" target="_blank" class="btn btn-outline-warning btn-sm"><i class="fa-brands fa-github me-1"></i> Repositorio</a>
+                        <div>
+                            <span class="badge bg-warning text-dark extra-small font-weight-bold">Caso de Estudio Destacado</span>
+                            <h2 class="h5 fw-bold text-white mb-0 mt-1">1. SpringEduManager — Gestión Educativa</h2>
+                        </div>
+                        <a href="https://github.com/luigefre-create/SpringEduManager" target="_blank" class="btn btn-outline-warning btn-sm extra-small"><i class="fa-brands fa-github me-1"></i> Repo</a>
                     </div>
 
-                    <div class="row g-2 small text-secondary mb-3">
+                    <div class="row g-2 mb-2 extra-small text-secondary">
                         <div class="col-md-6">
-                            <div class="p-3 bg-dark rounded border border-secondary h-100">
-                                <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-shield-halved me-1"></i> Desafío Técnico</h3>
-                                <p class="mb-0 extra-small">Configurar control de acceso estricto por roles (`ADMIN`/`USER`) en Spring Security para restringir la creación de cursos y bloquear accesos no autorizados (HTTP 403).</p>
+                            <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                <strong class="text-gold"><i class="fa-solid fa-shield-halved"></i> Desafío Técnico:</strong> Restringir la creación de cursos únicamente a administradores (`ADMIN`) con Spring Security y bloquear accesos con HTTP 403.
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="p-3 bg-dark rounded border border-secondary h-100">
-                                <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-circle-check me-1"></i> Solución & Métricas</h3>
-                                <p class="mb-0 extra-small">Persistencia relacional con Spring Data JPA, vistas dinámicas Thymeleaf y Bootstrap 5. 100% de eficacia en bloqueo de peticiones.</p>
+                            <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                <strong class="text-gold"><i class="fa-solid fa-circle-check"></i> Solución:</strong> Persistencia relacional Spring Data JPA, Thymeleaf, Bootstrap 5 y 100% de eficacia en seguridad.
                             </div>
                         </div>
                     </div>
@@ -274,153 +203,89 @@
                     <div class="row g-2">
                         <div class="col-md-6">
                             <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white small">2. Backend MySQL & JEE:</strong><br>
-                                <span class="text-muted extra-small mb-2 d-block">Modelo relacional, consultas SQL y persistencia.</span>
-                                <div class="d-flex gap-2">
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/spring/spring-original.svg" alt="Spring"></div>
-                                </div>
+                                <strong class="text-white extra-small">2. Persistencia MySQL & JEE:</strong><br>
+                                <span class="text-secondary extra-small">Diseño relacional, consultas SQL y modelos de datos.</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white small">3. Frontend Web Dinámico:</strong><br>
-                                <span class="text-muted extra-small mb-2 d-block">Interfaz responsive e interacción con DOM.</span>
-                                <div class="d-flex gap-2">
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/jquery/jquery-original.svg" alt="jQuery"></div>
-                                    <div class="tech-logo-card sm"><img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"></div>
-                                </div>
+                                <strong class="text-white extra-small">3. Frontend Web Responsive:</strong><br>
+                                <span class="text-secondary extra-small">Interfaces con HTML5, CSS3, JS, jQuery y GitHub Pages.</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- SLIDE 3: ANÁLISIS DE EMPRESA -->
-                <div class="carousel-item p-4 p-md-5">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="accent-box">
-                            <i class="fa-solid fa-building fa-lg me-2"></i> EMPRESA OBJETIVO
-                        </div>
-                        <span class="text-muted small">Diapositiva 03 / 04</span>
-                    </div>
-
-                    <h2 class="h5 fw-bold text-white mb-2">Simulación Técnica: <span class="text-warning">Mercado Libre Chile</span></h2>
-                    
-                    <div class="table-responsive mb-3">
-                        <table class="table table-dark-custom table-sm extra-small mb-0">
-                            <thead>
-                                <tr><th>Criterio</th><th>Análisis Técnico</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td><strong>Propósito</strong></td><td>Democratizar el comercio y servicios financieros en LATAM.</td></tr>
-                                <tr><td><strong>Stack Técnico</strong></td><td>Microservicios con Java, Spring, MySQL, JavaScript, React, Docker y AWS.</td></tr>
-                                <tr><td><strong>Metodología</strong></td><td>CI/CD, Scrum/Kanban y cultura DevOps de alta escalabilidad.</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="row g-3 extra-small text-secondary">
-                        <div class="col-md-6">
-                            <h3 class="h6 text-warning fw-bold mb-1">Propuesta de Valor</h3>
-                            <ul class="ps-3 mb-0">
-                                <li>Dominio operativo previo en ERPs, inventarios y procesos comerciales.</li>
-                                <li>Capacidad backend en Java, Spring Framework, JEE y MySQL.</li>
-                                <li>Desarrollo frontend en HTML5, CSS3, JS, jQuery y Bootstrap.</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h3 class="h6 text-warning fw-bold mb-1">Preguntas para Reclutador</h3>
-                            <ol class="ps-3 mb-0">
-                                <li>¿Cómo estructuran el acompañamiento técnico para perfil Trainee/Junior?</li>
-                                <li>¿Qué métricas evalúan la adaptación a la célula de desarrollo?</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SLIDE 4: MATRIZ FODA PERSONAL -->
-                <div class="carousel-item p-4 p-md-5">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div class="accent-box">
-                            <i class="fa-solid fa-chart-pie fa-lg me-2"></i> MATRIZ FODA
-                        </div>
-                        <span class="text-muted small">Diapositiva 04 / 04</span>
-                    </div>
-
-                    <h2 class="h5 fw-bold text-white mb-2">Análisis Estratégico Personal <span class="text-warning">(PLUS)</span></h2>
-
-                    <div class="row g-2 extra-small">
-                        <div class="col-6">
-                            <div class="foda-box">
-                                <h3 class="h6 text-success fw-bold mb-1"><i class="fa-solid fa-shield"></i> Fortalezas</h3>
-                                <ul class="text-secondary ps-3 mb-0">
-                                    <li>Trayectoria previa en administración y ERPs.</li>
-                                    <li>Dominio FullStack: Java, JEE, Spring, MySQL, JS, jQuery, HTML/CSS.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="foda-box">
-                                <h3 class="h6 text-danger fw-bold mb-1"><i class="fa-solid fa-circle-exclamation"></i> Debilidades</h3>
-                                <ul class="text-secondary ps-3 mb-0">
-                                    <li>Experiencia inicial en entornos de producción masiva.</li>
-                                    <li>Microservicios avanzados e infraestructura Cloud por profundizar.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="foda-box">
-                                <h3 class="h6 text-info fw-bold mb-1"><i class="fa-solid fa-lightbulb"></i> Oportunidades</h3>
-                                <ul class="text-secondary ps-3 mb-0">
-                                    <li>Alta demanda de desarrolladores Java/Spring Boot.</li>
-                                    <li>Gran valoración de perfiles híbridos (negocio + código).</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="foda-box">
-                                <h3 class="h6 text-warning fw-bold mb-1"><i class="fa-solid fa-triangle-exclamation"></i> Amenazas</h3>
-                                <ul class="text-secondary ps-3 mb-0">
-                                    <li>Competencia alta en convocatorias Trainee.</li>
-                                    <li>Evolución acelerada del mercado tecnológico.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+        </div>
 
-            <div class="carousel-indicators position-relative mt-3">
-                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <!-- FILA INFERIOR: INVESTIGACIÓN EMPRESA + MATRIZ FODA -->
+        <div class="row g-3">
+            
+            <!-- ANÁLISIS EMPRESA OBJETIVO -->
+            <div class="col-lg-6">
+                <div class="card-compact p-3">
+                    <h2 class="h6 fw-bold text-cyan mb-2"><i class="fa-solid fa-building me-1"></i> Empresa Objetivo: Mercado Libre Chile</h2>
+                    
+                    <table class="table table-custom table-bordered mb-2">
+                        <thead>
+                            <tr><th>Criterio</th><th>Análisis Técnico</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Propósito</strong></td><td>Democratizar el comercio y servicios financieros en LATAM.</td></tr>
+                            <tr><td><strong>Stack</strong></td><td>Microservicios con Java, Spring, MySQL, JS, React, Docker, AWS.</td></tr>
+                            <tr><td><strong>Metodología</strong></td><td>CI/CD, Scrum/Kanban y cultura DevOps.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row g-2 extra-small text-secondary">
+                        <div class="col-6">
+                            <strong class="text-gold">Aportes:</strong> Dominio de ERPs, construcción backend Java/Spring y maquetación web.
+                        </div>
+                        <div class="col-6">
+                            <strong class="text-gold">Preguntas:</strong> ¿Cómo estructuran la mentoría técnica para nivel Junior?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MATRIZ FODA PERSONAL -->
+            <div class="col-lg-6">
+                <div class="card-compact p-3">
+                    <h2 class="h6 fw-bold text-gold mb-2"><i class="fa-solid fa-chart-pie me-1"></i> Matriz FODA Personal (PLUS)</h2>
+                    
+                    <div class="row g-2 extra-small">
+                        <div class="col-6">
+                            <div class="foda-cell">
+                                <strong class="text-success"><i class="fa-solid fa-shield"></i> Fortalezas:</strong>
+                                <span class="text-secondary d-block">Experiencia previa en ERPs + Stack FullStack (Java, Spring, MySQL, JS).</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="foda-cell">
+                                <strong class="text-danger"><i class="fa-solid fa-circle-exclamation"></i> Debilidades:</strong>
+                                <span class="text-secondary d-block">Experiencia inicial en producción masiva y Cloud por profundizar.</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="foda-cell">
+                                <strong class="text-primary"><i class="fa-solid fa-lightbulb"></i> Oportunidades:</strong>
+                                <span class="text-secondary d-block">Alta demanda Java/Spring y valoración de perfiles híbridos.</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="foda-cell">
+                                <strong class="text-warning"><i class="fa-solid fa-triangle-exclamation"></i> Amenazas:</strong>
+                                <span class="text-secondary d-block">Competencia alta en convocatorias iniciales.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    </script>
 </body>
 </html>
