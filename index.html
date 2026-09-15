@@ -7,18 +7,81 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; padding: 60px 0 50px; }
-        .hero-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #3b82f6; object-fit: cover; }
-        .card { border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 24px; }
-        .section-title { border-left: 5px solid #2563eb; padding-left: 12px; font-weight: 700; color: #1e3a8a; margin-bottom: 25px; }
-        .badge-tech { background-color: #eff6ff; color: #1d4ed8; font-weight: 600; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; margin-right: 4px; display: inline-block; margin-bottom: 6px; }
-        .table-custom th { background-color: #1e3a8a; color: white; }
-        .foda-box { padding: 15px; border-radius: 8px; min-height: 100%; }
-        .foda-f { background-color: #ecfdf5; border-top: 4px solid #10b981; }
-        .foda-d { background-color: #fef2f2; border-top: 4px solid #ef4444; }
-        .foda-o { background-color: #eff6ff; border-top: 4px solid #3b82f6; }
-        .foda-a { background-color: #fffbeb; border-top: 4px solid #f59e0b; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #171e2e 100%); 
+            color: #f1f5f9; 
+            min-height: 100vh;
+        }
+        .hero { 
+            background: rgba(15, 23, 42, 0.85); 
+            border-bottom: 1px solid #334155; 
+            padding: 55px 0 45px; 
+            backdrop-filter: blur(10px);
+        }
+        .hero-img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            border: 3px solid #38bdf8; 
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); 
+            object-fit: cover; 
+        }
+        .card { 
+            background-color: #1e293b; 
+            border: 1px solid #334155; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); 
+            margin-bottom: 24px; 
+            color: #f1f5f9;
+        }
+        .section-title { 
+            border-left: 5px solid #38bdf8; 
+            padding-left: 12px; 
+            font-weight: 700; 
+            color: #38bdf8; 
+            margin-bottom: 25px; 
+        }
+        .badge-tech { 
+            background-color: #0f172a; 
+            color: #38bdf8; 
+            border: 1px solid #0284c7; 
+            font-weight: 600; 
+            padding: 6px 12px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            margin-right: 4px; 
+            display: inline-block; 
+            margin-bottom: 6px; 
+        }
+        .table-dark-custom { 
+            background-color: #0f172a; 
+            color: #e2e8f0; 
+            border-color: #334155; 
+        }
+        .table-dark-custom th { 
+            background-color: #0284c7; 
+            color: white; 
+        }
+        .table-dark-custom td { 
+            border-color: #334155; 
+            background-color: #1e293b; 
+            color: #e2e8f0; 
+        }
+        .foda-box { 
+            padding: 18px; 
+            border-radius: 8px; 
+            min-height: 100%; 
+            border: 1px solid #334155;
+        }
+        .foda-f { background-color: rgba(6, 78, 59, 0.4); border-top: 4px solid #10b981; }
+        .foda-d { background-color: rgba(127, 29, 29, 0.4); border-top: 4px solid #ef4444; }
+        .foda-o { background-color: rgba(30, 58, 138, 0.4); border-top: 4px solid #3b82f6; }
+        .foda-a { background-color: rgba(120, 53, 15, 0.4); border-top: 4px solid #f59e0b; }
+        
+        .text-muted-custom { color: #94a3b8 !important; }
+        a.text-link { color: #38bdf8; text-decoration: none; }
+        a.text-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -31,12 +94,14 @@
                     <img src="tu-foto.jpg" alt="Luis Freites" class="hero-img">
                 </div>
                 <div class="col-md-9">
-                    <h1 class="fw-bold mb-1">Luis Germán Freites Arteaga</h1>
-                    <p class="lead mb-2" style="color: #93c5fd;">Desarrollador FullStack Java Trainee | Talento Digital para Chile</p>
-                    <p class="small text-light mb-3"><i class="fa-solid fa-location-dot me-1"></i> Quilpué, Chile | <i class="fa-solid fa-envelope me-1"></i> luigefre@gmail.com | <i class="fa-solid fa-phone me-1"></i> +56 9 2749 3554</p>
+                    <h1 class="fw-bold mb-1 text-white">Luis Germán Freites Arteaga</h1>
+                    <p class="lead mb-2" style="color: #38bdf8;">Desarrollador FullStack Java Trainee | Talento Digital para Chile</p>
+                    <p class="small text-muted-custom mb-3"><i class="fa-solid fa-location-dot me-1 text-info"></i> Quilpué, Chile | <i class="fa-solid fa-envelope me-1 text-info"></i> luigefre@gmail.com | <i class="fa-solid fa-phone me-1 text-info"></i> +56 9 2749 3554</p>
                     <div>
-                        <a href="https://github.com/luigefre" target="_blank" class="btn btn-outline-light btn-sm me-2"><i class="fa-brands fa-github me-1"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/luisfreites" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fa-brands fa-linkedin me-1"></i> LinkedIn</a>
+                        <!-- GitHub corregido a tu usuario exacto -->
+                        <a href="https://github.com/luigefre-create" target="_blank" class="btn btn-outline-info btn-sm me-2"><i class="fa-brands fa-github me-1"></i> GitHub</a>
+                        <!-- Puedes cambiar este link por la URL de tu perfil de LinkedIn -->
+                        <a href="https://www.linkedin.com" target="_blank" class="btn btn-primary btn-sm me-2"><i class="fa-brands fa-linkedin me-1"></i> LinkedIn</a>
                         <a href="#contacto" class="btn btn-warning btn-sm"><i class="fa-solid fa-file-pdf me-1"></i> Descargar CV</a>
                     </div>
                 </div>
@@ -52,24 +117,24 @@
             <div class="row">
                 <div class="col-md-7 mb-3 mb-md-0">
                     <div class="card p-4 h-100">
-                        <h3 class="h5 fw-bold text-primary mb-2">Resumen Profesional</h3>
-                        <p class="mb-0">
+                        <h3 class="h5 fw-bold text-info mb-2">Resumen Profesional</h3>
+                        <p class="mb-0 text-muted-custom">
                             Profesional con sólida trayectoria en gestión comercial, administración operativa y sistemas ERP, reconvertido al desarrollo de software backend en Java[cite: 4]. Combino la comprensión directa de procesos de negocio y atención al cliente con competencias técnicas en el diseño de aplicaciones web MVC, persistencia relacional y servicios RESTful[cite: 3, 4].
                         </p>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="card p-4 h-100 border-start border-4 border-primary">
-                        <h3 class="h5 fw-bold text-primary mb-3"><i class="fa-solid fa-graduation-cap me-2"></i>Educación & Bootcamp</h3>
+                    <div class="card p-4 h-100 border-start border-4 border-info">
+                        <h3 class="h5 fw-bold text-info mb-3"><i class="fa-solid fa-graduation-cap me-2"></i>Educación & Bootcamp</h3>
                         <ul class="list-unstyled mb-0 small">
                             <li class="mb-3">
-                                <strong>Bootcamp Desarrollador FullStack Java Trainee</strong><br>
-                                <span class="text-primary fw-semibold">Talento Digital para Chile / Alkemy</span><br>
-                                <span class="text-muted">Formación intensiva en arquitectura MVC, Spring Boot, JPA, Spring Security, REST APIs y metodología ágil.</span>
+                                <strong class="text-white">Bootcamp Desarrollador FullStack Java Trainee</strong><br>
+                                <span class="text-info fw-semibold">Talento Digital para Chile / Alkemy</span><br>
+                                <span class="text-muted-custom">Formación intensiva en arquitectura MVC, Spring Boot, JPA, Spring Security, REST APIs y metodología ágil.</span>
                             </li>
                             <li>
-                                <strong>Capacitación Técnica & Ofimática Avanzada</strong><br>
-                                <span class="text-muted">Gestión de ERP FullPyme, Mercado Público y herramientas CRM[cite: 4].</span>
+                                <strong class="text-white">Capacitación Técnica & Ofimática Avanzada</strong><br>
+                                <span class="text-muted-custom">Gestión de ERP FullPyme, Mercado Público y herramientas CRM[cite: 4].</span>
                             </li>
                         </ul>
                     </div>
@@ -82,25 +147,26 @@
             <h2 class="section-title">Proyectos Destacados (Portafolio Técnico)</h2>
             
             <!-- PROYECTO 1: CASO DE ESTUDIO -->
-            <div class="card p-4 mb-4 border-primary">
+            <div class="card p-4 mb-4 border-info">
                 <div class="d-flex justify-content-between align-items-start flex-wrap">
                     <div>
-                        <span class="badge bg-primary mb-2">Caso de Estudio Destacado</span>
-                        <h3 class="h4 fw-bold">1. SpringEduManager - Sistema de Gestión Educativa</h3>
+                        <span class="badge bg-info text-dark fw-bold mb-2">Caso de Estudio Destacado</span>
+                        <h3 class="h4 fw-bold text-white">1. SpringEduManager - Sistema de Gestión Educativa</h3>
                     </div>
-                    <a href="https://github.com/luigefre/SpringEduManager" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fa-brands fa-github me-1"></i> Ver Repositorio</a>
+                    <!-- Link al repositorio corregido -->
+                    <a href="https://github.com/luigefre-create/SpringEduManager" target="_blank" class="btn btn-sm btn-outline-info"><i class="fa-brands fa-github me-1"></i> Ver Repositorio</a>
                 </div>
-                <hr>
+                <hr class="border-secondary">
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <p><strong>Descripción:</strong> Aplicación web para la gestión centralizada de alumnos y cursos desarrollada con arquitectura en capas MVC[cite: 3].</p>
-                        <p><strong>Desafío Principal:</strong> Configurar un esquema estricto de seguridad con Spring Security para restringir la creación de cursos únicamente a administradores (`ADMIN`) y bloquear accesos no autorizados[cite: 3].</p>
-                        <p><strong>Solución Propuesta:</strong> Implementación de autenticación con roles, mapeo ORM mediante Spring Data JPA, vistas dinámicas Thymeleaf y exposición de servicios RESTful[cite: 3].</p>
+                        <p><strong class="text-white">Descripción:</strong> Aplicación web para la gestión centralizada de alumnos y cursos desarrollada con arquitectura en capas MVC.</p>
+                        <p><strong class="text-white">Desafío Principal:</strong> Configurar un esquema estricto de seguridad con Spring Security para restringir la creación de cursos únicamente a administradores (`ADMIN`) y bloquear accesos no autorizados[cite: 3].</p>
+                        <p><strong class="text-white">Solución Propuesta:</strong> Implementación de autenticación con roles, mapeo ORM mediante Spring Data JPA, vistas dinámicas Thymeleaf y exposición de servicios RESTful[cite: 3].</p>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <p><strong>Métricas de Impacto:</strong> 100% de efectividad en el bloqueo de peticiones no autorizadas y precarga de datos H2 en menos de 2 segundos[cite: 3].</p>
-                        <p><strong>Aprendizajes Clave:</strong> Manejo de excepciones de seguridad, desacoplamiento de capas y empaquetado autónomo en ejecutable `.jar`[cite: 3].</p>
-                        <p><strong>Justificación de Elección:</strong> Proyecto integrador que demuestra el ciclo completo de desarrollo backend moderno[cite: 3].</p>
+                        <p><strong class="text-white">Métricas de Impacto:</strong> 100% de efectividad en el bloqueo de peticiones no autorizadas y precarga de datos H2 en menos de 2 segundos[cite: 3].</p>
+                        <p><strong class="text-white">Aprendizajes Clave:</strong> Manejo de excepciones de seguridad, desacoplamiento de capas y empaquetado autónomo en ejecutable `.jar`[cite: 3].</p>
+                        <p><strong class="text-white">Justificación de Elección:</strong> Proyecto integrador que demuestra el ciclo completo de desarrollo backend moderno[cite: 3].</p>
                     </div>
                 </div>
                 <div>
@@ -117,9 +183,9 @@
                 <!-- PROYECTO 2 -->
                 <div class="col-md-6 mb-4">
                     <div class="card p-4 h-100">
-                        <h3 class="h5 fw-bold">2. Módulo de Persistencia y Consultas JPA</h3>
-                        <p class="small text-muted">Persistencia de Datos Relacionales</p>
-                        <p>Desarrollo de modelos relacionales y repositorios JPA para la ejecución de operaciones CRUD eficientes y consultas personalizadas sobre bases de datos SQL[cite: 3].</p>
+                        <h3 class="h5 fw-bold text-white">2. Módulo de Persistencia y Consultas JPA</h3>
+                        <p class="small text-info">Persistencia de Datos Relacionales</p>
+                        <p class="text-muted-custom">Desarrollo de modelos relacionales y repositorios JPA para la ejecución de operaciones CRUD eficientes y consultas personalizadas sobre bases de datos SQL[cite: 3].</p>
                         <div class="mt-auto">
                             <span class="badge-tech">Java</span>
                             <span class="badge-tech">Spring Data JPA</span>
@@ -131,9 +197,9 @@
                 <!-- PROYECTO 3 -->
                 <div class="col-md-6 mb-4">
                     <div class="card p-4 h-100">
-                        <h3 class="h5 fw-bold">3. Portafolio Digital e Identidad Web</h3>
-                        <p class="small text-muted">Despliegue y Marca Personal</p>
-                        <p>Diseño de interfaz web responsive construida con HTML5, CSS3 y Bootstrap 5, desplegada como sitio estático a través de GitHub Pages para visibilidad profesional[cite: 3].</p>
+                        <h3 class="h5 fw-bold text-white">3. Portafolio Digital e Identidad Web</h3>
+                        <p class="small text-info">Despliegue y Marca Personal</p>
+                        <p class="text-muted-custom">Diseño de interfaz web responsive construida con HTML5, CSS3 y Bootstrap 5, desplegada como sitio estático a través de GitHub Pages para visibilidad profesional[cite: 3].</p>
                         <div class="mt-auto">
                             <span class="badge-tech">HTML5</span>
                             <span class="badge-tech">CSS3</span>
@@ -149,9 +215,9 @@
         <section class="mb-5">
             <h2 class="section-title">Análisis de Empresa Objetivo (Simulación Técnica)</h2>
             <div class="card p-4 mb-4">
-                <h3 class="h5 fw-bold text-primary mb-3">Organización Seleccionada: Mercado Libre Chile</h3>
+                <h3 class="h5 fw-bold text-info mb-3">Organización Seleccionada: Mercado Libre Chile</h3>
                 <div class="table-responsive mb-4">
-                    <table class="table table-bordered table-custom mb-0">
+                    <table class="table table-bordered table-dark-custom mb-0">
                         <thead>
                             <tr>
                                 <th>Criterio</th>
@@ -160,23 +226,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Valores y Propósito</strong></td>
+                                <td><strong class="text-white">Valores y Propósito</strong></td>
                                 <td>Democratizar el comercio y los servicios financieros mediante tecnología accesible e inclusiva[cite: 3].</td>
                             </tr>
                             <tr>
-                                <td><strong>Tipo de Productos</strong></td>
+                                <td><strong class="text-white">Tipo de Productos</strong></td>
                                 <td>Ecosistema digital: Marketplace, Mercado Pago, Mercado Envíos y herramientas ERP/CRM[cite: 3].</td>
                             </tr>
                             <tr>
-                                <td><strong>Tecnologías</strong></td>
+                                <td><strong class="text-white">Tecnologías</strong></td>
                                 <td>Arquitectura distribuida en Microservicios con Java, Spring Boot, Go, React, Docker y AWS[cite: 3].</td>
                             </tr>
                             <tr>
-                                <td><strong>Metodologías</strong></td>
+                                <td><strong class="text-white">Metodologías</strong></td>
                                 <td>Frameworks ágiles (Scrum/Kanban), integración continua (CI/CD) y cultura DevOps[cite: 3].</td>
                             </tr>
                             <tr>
-                                <td><strong>Enfoque en Innovación</strong></td>
+                                <td><strong class="text-white">Enfoque en Innovación</strong></td>
                                 <td>Procesamiento transaccional masivo en tiempo real y optimización logística mediante datos[cite: 3].</td>
                             </tr>
                         </tbody>
@@ -185,16 +251,16 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="h6 fw-bold">Propuesta de Valor (3 Aportes Concretos)</h4>
-                        <ul class="small">
-                            <li><strong>Dominio Operativo:</strong> Experiencia previa en ERPs y catálogos digitales para comprender la lógica del negocio[cite: 4].</li>
-                            <li><strong>Construcción Backend:</strong> Base en Java y Spring Boot para el desarrollo de servicios seguros[cite: 3].</li>
-                            <li><strong>Colaboración Eficiente:</strong> Comunicación asertiva y resolución de problemas en células multidisciplinarias[cite: 3, 4].</li>
+                        <h4 class="h6 fw-bold text-white">Propuesta de Valor (3 Aportes Concretos)</h4>
+                        <ul class="small text-muted-custom">
+                            <li><strong class="text-white">Dominio Operativo:</strong> Experiencia previa en ERPs y catálogos digitales para comprender la lógica del negocio[cite: 4].</li>
+                            <li><strong class="text-white">Construcción Backend:</strong> Base en Java y Spring Boot para el desarrollo de servicios seguros[cite: 3].</li>
+                            <li><strong class="text-white">Colaboración Eficiente:</strong> Comunicación asertiva y resolución de problemas en células multidisciplinarias[cite: 3, 4].</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="h6 fw-bold">Preguntas para el Equipo Técnico</h4>
-                        <ol class="small">
+                        <h4 class="h6 fw-bold text-white">Preguntas para el Equipo Técnico</h4>
+                        <ol class="small text-muted-custom">
                             <li>¿Cómo se estructura la mentoría para desarrolladores de nivel Junior durante sus primeros meses[cite: 3]?</li>
                             <li>¿Qué métricas evalúan para medir la adaptación técnica dentro de la célula de trabajo[cite: 3]?</li>
                             <li>¿Qué instancias internas promueven para la capacitación continua en nuevas tecnologías[cite: 3]?</li>
@@ -211,9 +277,9 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="foda-box foda-f">
                         <h3 class="h6 fw-bold text-success"><i class="fa-solid fa-shield-halved me-1"></i> Fortalezas</h3>
-                        <ul class="small ps-3 mb-0">
-                            <li>Experiencia previa en gestión comercial y sistemas ERP[cite: 4].</li>
-                            <li>Base sólida en Java 21, Spring Boot y arquitectura MVC[cite: 3].</li>
+                        <ul class="small ps-3 mb-0 text-muted-custom">
+                            <li>Experiencia previa en gestión comercial y ERPs[cite: 4].</li>
+                            <li>Base sólida en Java 21, Spring Boot y MVC[cite: 3].</li>
                             <li>Comunicación asertiva y persuasión[cite: 4].</li>
                             <li>Autonomía y aprendizaje adaptativo[cite: 4].</li>
                             <li>Control de versiones con Git/GitHub[cite: 3].</li>
@@ -223,8 +289,8 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="foda-box foda-d">
                         <h3 class="h6 fw-bold text-danger"><i class="fa-solid fa-triangle-exclamation me-1"></i> Debilidades</h3>
-                        <ul class="small ps-3 mb-0">
-                            <li>Experiencia en sistemas de gran escala en producción[cite: 3].</li>
+                        <ul class="small ps-3 mb-0 text-muted-custom">
+                            <li>Experiencia en sistemas de producción a gran escala[cite: 3].</li>
                             <li>Profundización en microservicios y Cloud[cite: 3].</li>
                             <li>Dominio de frameworks frontend (React)[cite: 3].</li>
                             <li>Uso avanzado de herramientas Jira[cite: 3].</li>
@@ -235,9 +301,9 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="foda-box foda-o">
                         <h3 class="h6 fw-bold text-primary"><i class="fa-solid fa-lightbulb me-1"></i> Oportunidades</h3>
-                        <ul class="small ps-3 mb-0">
+                        <ul class="small ps-3 mb-0 text-muted-custom">
                             <li>Demanda continua de desarrolladores Java/Spring[cite: 3].</li>
-                            <li>Valoración de perfiles híbridos negocio-tecnología[cite: 3, 4].</li>
+                            <li>Valoración de perfiles híbridos negocio-código[cite: 3, 4].</li>
                             <li>Programas de aceleración Trainee/Junior[cite: 3].</li>
                             <li>Automatización de procesos administrativos[cite: 3].</li>
                             <li>Proyectos de código abierto para prácticas[cite: 3].</li>
@@ -247,7 +313,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="foda-box foda-a">
                         <h3 class="h6 fw-bold text-warning"><i class="fa-solid fa-circle-exclamation me-1"></i> Amenazas</h3>
-                        <ul class="small ps-3 mb-0">
+                        <ul class="small ps-3 mb-0 text-muted-custom">
                             <li>Competencia en postulaciones iniciales[cite: 3].</li>
                             <li>Exigencia de experiencia previa específica[cite: 3].</li>
                             <li>Evolución acelerada del mercado tecnológico[cite: 3].</li>
@@ -262,10 +328,10 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-4" id="contacto">
+    <footer class="bg-black text-white text-center py-4 border-top border-secondary" id="contacto">
         <div class="container">
             <p class="mb-1">Luis Germán Freites Arteaga — Portafolio Profesional Módulo 7</p>
-            <p class="small text-muted">Quilpué, Chile | luigefre@gmail.com | +56 9 2749 3554 | <a href="https://www.linkedin.com/in/luisfreites" target="_blank" class="text-white text-decoration-underline">Perfil LinkedIn</a></p>
+            <p class="small text-muted-custom">Quilpué, Chile | luigefre@gmail.com | +56 9 2749 3554 | <a href="https://github.com/luigefre-create" target="_blank" class="text-info text-decoration-underline">Perfil GitHub</a></p>
         </div>
     </footer>
 
