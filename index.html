@@ -109,16 +109,27 @@
         .text-gold { color: var(--accent-gold) !important; }
         .text-cyan { color: var(--accent-cyan) !important; }
         .extra-small { font-size: 0.78rem; }
+        
+        .badge-tech-sm {
+            background-color: #1e293b;
+            color: var(--accent-cyan);
+            border: 1px solid #334155;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 3px;
+        }
     </style>
 </head>
 <body class="py-3">
 
     <div class="container-fluid px-md-4" style="max-width: 1300px;">
         
-        <!-- FILA SUPERIOR: PERFIL + PROYECTOS -->
+        <!-- FILA SUPERIOR: PERFIL + PROYECTOS INTEGRALES -->
         <div class="row g-3 mb-3">
             
-            <!-- COLUMNA IZQUIERDA: PERFIL, CONTACTO Y LOGOS OFICIALES -->
+            <!-- COLUMNA IZQUIERDA: PERFIL, CONTACTO Y LOGOS -->
             <div class="col-lg-4">
                 <div class="card-compact p-3 d-flex flex-column justify-content-between">
                     <div>
@@ -134,10 +145,10 @@
 
                         <!-- Breve Resumen -->
                         <p class="text-secondary extra-small mb-3">
-                            Perfil híbrido con amplia experiencia en gestión comercial y sistemas ERP, reconvertido al desarrollo FullStack Java, MVC y bases de datos relacionales.
+                            Perfil híbrido con amplia experiencia en gestión comercial y sistemas ERP, reconvertido al desarrollo FullStack Java, arquitectura MVC y bases de datos relacionales.
                         </p>
 
-                        <!-- Tecnologías con Logos en sus Colores Originales -->
+                        <!-- Tecnologías con Logos Oficiales -->
                         <h2 class="h6 text-gold fw-bold mb-2"><i class="fa-solid fa-layer-group me-1"></i> Stack Tecnológico:</h2>
                         
                         <div class="tech-grid mb-3">
@@ -176,50 +187,89 @@
                 </div>
             </div>
 
-            <!-- COLUMNA DERECHA: PROYECTOS TÉCNICOS (CASO DE ESTUDIO) -->
+            <!-- COLUMNA DERECHA: LOS 4 PROYECTOS DEL BOOTCAMP -->
             <div class="col-lg-8">
                 <div class="card-compact p-3 border-warning">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
+                    
+                    <!-- PROYECTO 1: SPRINGEDUMANAGER (DESTACADO) -->
+                    <div class="mb-3 pb-2 border-bottom border-secondary">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <div>
+                                <span class="badge bg-warning text-dark extra-small font-weight-bold">Caso de Estudio Módulo 7</span>
+                                <h2 class="h5 fw-bold text-white mb-0 mt-1">1. SpringEduManager — Gestión Educativa</h2>
+                            </div>
+                            <a href="https://github.com/luigefre-create/SpringEduManager" target="_blank" class="btn btn-outline-warning btn-sm extra-small"><i class="fa-brands fa-github me-1"></i> Repo</a>
+                        </div>
+                        <p class="text-secondary extra-small mb-2">Sistema web para control centralizado de alumnos y cursos académicos.</p>
+                        <div class="row g-2 extra-small text-secondary mb-2">
+                            <div class="col-md-6">
+                                <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                    <strong class="text-gold"><i class="fa-solid fa-shield-halved"></i> Seguridad:</strong> Control de acceso por roles (`ADMIN`/`USER`) con Spring Security y bloqueo 403.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                    <strong class="text-gold"><i class="fa-solid fa-database"></i> Persistencia:</strong> Mapeo relacional JPA, vistas Thymeleaf y precarga H2/MySQL.
+                                </div>
+                            </div>
+                        </div>
                         <div>
-                            <span class="badge bg-warning text-dark extra-small font-weight-bold">Caso de Estudio Destacado</span>
-                            <h2 class="h5 fw-bold text-white mb-0 mt-1">1. SpringEduManager — Gestión Educativa</h2>
-                        </div>
-                        <a href="https://github.com/luigefre-create/SpringEduManager" target="_blank" class="btn btn-outline-warning btn-sm extra-small"><i class="fa-brands fa-github me-1"></i> Repo</a>
-                    </div>
-
-                    <div class="row g-2 mb-2 extra-small text-secondary">
-                        <div class="col-md-6">
-                            <div class="p-2 bg-dark rounded border border-secondary h-100">
-                                <strong class="text-gold"><i class="fa-solid fa-shield-halved"></i> Desafío Técnico:</strong> Restringir la creación de cursos únicamente a administradores (`ADMIN`) con Spring Security y bloquear accesos con HTTP 403.
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="p-2 bg-dark rounded border border-secondary h-100">
-                                <strong class="text-gold"><i class="fa-solid fa-circle-check"></i> Solución:</strong> Persistencia relacional Spring Data JPA, Thymeleaf, Bootstrap 5 y 100% de eficacia en seguridad.
-                            </div>
+                            <span class="badge-tech-sm">Java 21</span>
+                            <span class="badge-tech-sm">Spring Boot 3</span>
+                            <span class="badge-tech-sm">Spring Security</span>
+                            <span class="badge-tech-sm">Spring Data JPA</span>
+                            <span class="badge-tech-sm">Bootstrap 5</span>
                         </div>
                     </div>
 
+                    <!-- GRILLA CON LOS OTROS 3 PROYECTOS -->
                     <div class="row g-2">
-                        <div class="col-md-6">
-                            <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white extra-small">2. Persistencia MySQL & JEE:</strong><br>
-                                <span class="text-secondary extra-small">Diseño relacional, consultas SQL y modelos de datos.</span>
+                        <!-- PROYECTO 2: ALKEWALLET -->
+                        <div class="col-md-4">
+                            <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                <h3 class="h6 text-white fw-bold mb-1"><i class="fa-solid fa-wallet text-warning me-1"></i>2. Alkewallet</h3>
+                                <p class="text-secondary extra-small mb-2">Simulación de Billetera Virtual para depósitos, transferencias y consulta de saldos en tiempo real.</p>
+                                <div>
+                                    <span class="badge-tech-sm">Java / JEE</span>
+                                    <span class="badge-tech-sm">MySQL</span>
+                                    <span class="badge-tech-sm">Bootstrap</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="p-2 bg-dark rounded border border-secondary">
-                                <strong class="text-white extra-small">3. Frontend Web Responsive:</strong><br>
-                                <span class="text-secondary extra-small">Interfaces con HTML5, CSS3, JS, jQuery y GitHub Pages.</span>
+
+                        <!-- PROYECTO 3: SMART TASK -->
+                        <div class="col-md-4">
+                            <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                <h3 class="h6 text-white fw-bold mb-1"><i class="fa-solid fa-list-check text-cyan me-1"></i>3. Smart Task</h3>
+                                <p class="text-secondary extra-small mb-2">Aplicación interactiva de gestión de tareas y proyectos con seguimiento de estados y CRUD completo.</p>
+                                <div>
+                                    <span class="badge-tech-sm">Java</span>
+                                    <span class="badge-tech-sm">JavaScript</span>
+                                    <span class="badge-tech-sm">HTML/CSS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROYECTO 4: BIBLIOTECA UNTEC -->
+                        <div class="col-md-4">
+                            <div class="p-2 bg-dark rounded border border-secondary h-100">
+                                <h3 class="h6 text-white fw-bold mb-1"><i class="fa-solid fa-book text-warning me-1"></i>4. Biblioteca UNTEC</h3>
+                                <p class="text-secondary extra-small mb-2">Sistema de gestión bibliotecaria para administración de catálogo de libros, préstamos e inventario.</p>
+                                <div>
+                                    <span class="badge-tech-sm">Java</span>
+                                    <span class="badge-tech-sm">JPA / SQL</span>
+                                    <span class="badge-tech-sm">MySQL</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
         </div>
 
-        <!-- FILA INFERIOR: INVESTIGACIÓN EMPRESA + MATRIZ FODA -->
+        <!-- FILA INFERIOR: INVESTIGACIÓN EMPRESA OBJETIVO + MATRIZ FODA -->
         <div class="row g-3">
             
             <!-- ANÁLISIS EMPRESA OBJETIVO -->
@@ -258,7 +308,7 @@
                         <div class="col-6">
                             <div class="foda-cell">
                                 <strong class="text-success"><i class="fa-solid fa-shield"></i> Fortalezas:</strong>
-                                <span class="text-secondary d-block">Experiencia previa en ERPs + Stack FullStack (Java, Spring, MySQL, JS).</span>
+                                <span class="text-secondary d-block">Experiencia en ERPs + Stack FullStack (Java, Spring, MySQL, JS).</span>
                             </div>
                         </div>
                         <div class="col-6">
